@@ -7,3 +7,5 @@ conta.Sacar(30);
 
 Console.WriteLine($"Saldo atual: R$ {conta.Saldo:F2}");
 Console.WriteLine($"Transações realizadas:{conta.Transacoes.Count}");
+
+conta.ExibirExtrato();
