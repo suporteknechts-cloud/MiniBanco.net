@@ -1,4 +1,6 @@
+using MiniBanco.ConsoleApp.Exceptions;
 using System.Collections.Generic;
+
 
 namespace MiniBanco.ConsoleApp.Models
 {
@@ -33,7 +35,7 @@ namespace MiniBanco.ConsoleApp.Models
 
             if (valor > Saldo)
             {
-                throw new InvalidOperationException("Saldo insuficiente para realizar o saque.");
+                throw new SaldoInsuficienteException();
             }
 
             Saldo -= valor;
