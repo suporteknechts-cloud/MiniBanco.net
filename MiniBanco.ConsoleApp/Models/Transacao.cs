@@ -1,15 +1,36 @@
+using System;
+
 namespace MiniBanco.ConsoleApp.Models
 {
-        public class Transacao
+    public class Transacao
+    {
+        public string Descricao { get; }
+        public string Tipo { get; }
+        public decimal Valor { get; }
+
+        public Transacao(string descricao, string tipo, decimal valor)
         {
-            public string? Tipo { get; set; } = "";
-            public decimal Valor { get; set; }
-            public DateTime Data { get; set; }
-            public Transacao(string tipo, decimal valor)
-        {
-            Tipo = tipo;
-            Valor = valor;
-            Data = DateTime.Now;
+            if (string.IsNullOrWhiteSpace(descricao))
+            {
+                throw new ArgumentException(
+                    "A descrição da transação não pode ser vazia.");
+            }
+
+            if (tipo != "Deposito" && tipo != "Saque" && tipo != "Tarifa")
+            {
+                throw new ArgumentException(
+                    "O tipo deve ser Deposito, Saque ou Tarifa.");
+            }
+
+            if (valor <= 0)
+            {
+                throw new ArgumentException(
+                    "O valor da transação deve ser maior que zero.");
+            }
+
+            this.Descricao = descricao;
+            this.Tipo = tipo;
+            this.Valor = valor;
         }
-   } 
+    }
 }
