@@ -1,7 +1,11 @@
 ﻿using MiniBanco.ConsoleApp.Exceptions;
 using MiniBanco.ConsoleApp.Models;
 
-Conta conta = new Conta(100);
+Conta conta = new ContaCorrente(
+    "Vanderlei",
+    1001,
+    100m,
+    500m);
 
 //conta.Depositar(50);
 //conta.Sacar(30);
@@ -46,7 +50,7 @@ while (true)
         {
             try
             {
-                conta.Depositar(valor);
+                conta.Depositar(valor, "Depósito pelo menu");
                 Console.WriteLine($"Depósito realizado com sucesso.");
                 Console.WriteLine($"Novo saldo: R$ {conta.Saldo:F2}");
             }
