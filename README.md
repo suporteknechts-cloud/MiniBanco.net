@@ -73,11 +73,6 @@ Execute a aplicação:
 dotnet run --project MiniBanco.ConsoleApp/MiniBanco.ConsoleApp.csproj
 ```
 
-O desenvolvimento foi realizado na branch `feature/adequacao-modelos`.
-Enquanto ela não estiver integrada à `main`, selecione-a antes de executar:
-
-```bash
-git switch feature/adequacao-modelos
 ```
 
 Para compilar sem executar:
@@ -223,4 +218,4 @@ A validação incluiu compilação e testes manuais das movimentações, fechame
 
 ## Vídeo de apresentação
 
-Link pendente. Será adicionado após a gravação.
+https://youtu.be/ltAvnoMsyP0
